@@ -1,5 +1,7 @@
 from NodoM import NodoM
 from Lista_simple import Lista
+from MatrizBinaria import ListaB
+from Lista2 import Lista2
 lis=Lista()
 class ListaM:
 
@@ -34,3 +36,31 @@ class ListaM:
             cont=cont+1
             temp=temp.siguiente 
             
+
+    def obtener(self):
+
+        temp=self.cabeza
+        listaB=ListaB()
+        while temp is not None:
+            aux=temp.matriz.cabeza
+            if temp.nombre:
+                #print(temp.nombre)
+                lista2=Lista2()
+                while aux is not None:
+                    
+                    
+                    binario=""
+                    
+                    if aux.numero=="0":
+                        binario=0
+                    else:
+                        binario=1    
+                    lista2.insertar_final(aux.x,aux.y,aux.numero,binario)
+                    aux=aux.enlace
+                    #print(lista2.imprimir()) 
+                    
+                listaB.insertar_final(temp.nombre,temp.n,temp.m,lista2)        
+                #listaB.imprimir()
+                
+            temp=temp.siguiente
+        listaB.imprimirMatriz()             

@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET 
 from Lista_simple import Lista
 from Matriz import ListaM
+
 class Datos:
    
 
@@ -19,11 +20,15 @@ class Datos:
             
             for i in element:
                 listaAdentro.insertar_final(i.attrib['x'],i.attrib['y'],i.text)
-                print(i.attrib['x']+" "+i.attrib['y']+" "+i.text)
+                #print(i.attrib['x']+" "+i.attrib['y']+" "+i.text)
             lista.insertar_final(element.attrib['nombre'],element.attrib['n'],element.attrib['m'],listaAdentro)
                    
             cont=cont+1
-        lista.imprimir()    
+        #lista.imprimir()   
+
+        
+        print("_________________")
+        lista.obtener()
         #
         
         '''for element in root:

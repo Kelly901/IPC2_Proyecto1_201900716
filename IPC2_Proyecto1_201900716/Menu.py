@@ -1,8 +1,12 @@
 from Lista_simple import Lista
 from Matriz import ListaM
 from Datos import Datos
+from Lista2 import Lista2
+from MatrizBinaria import ListaB
 lis=Lista()
-matriz=ListaM()
+list2=Lista2()
+listaB=ListaB()
+
 class Menu:
     ruta=""
     def menu(self):
@@ -22,22 +26,33 @@ class Menu:
             print("Cargar Archivo")
             print("_______________________")
             self.ruta=input("Ingrese la ruta: ")
-            d=Datos()
-            d.procesar(self.ruta)
+            #d=Datos()
+            #d.procesar(self.ruta)
+            
             self.menu()
+            
             
         elif opcion=="2":
             print("Procesar Archivo")
             print(self.ruta)
             print(">Calculando la matriz binaria...")
             print(">Realizando suma de Tuplas...")
+            
+            print(listaB.imprimirMatriz())
+            d=Datos()
+            d.procesar(self.ruta)
+            print(".......")
+            print("ejrwrjeio")
             self.menu()
         elif opcion=="3":
             print("Escribir archivo de salida")
             print("____________________________")
             self.menu()
         elif opcion=="4":
+            print("________________________________________")
             print("Mostrar datos del estudiante")
+            print("Kelly Mischel Herrera Espino \n201900716 \nIntroducción a la Programación y Computación Sección \"D\" \nIngenieria en Ciencias y Sistemas \n4to Semestre")
+
         elif opcion=="5":
             print("Generar grafica")
         elif opcion=="6":
