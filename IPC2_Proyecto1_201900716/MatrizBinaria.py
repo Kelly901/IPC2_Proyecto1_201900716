@@ -47,27 +47,30 @@ class ListaB:
                     for j in range(int(temp.m)):
                         
                         numero=aux.binario
-                    
+                        
                         print("\t",numero,end=" ")
-                       
+                        
                         aux=aux.enlace
                         
                     print()    
             temp=temp.siguiente   
 
 
-    '''def suma(self):
-
+    def suma(self):
+        print("Suma")
         temp=self.cabeza
         while temp is not None:
 
-            aux=temp.cabeza
+            aux=temp.matriz.cabeza
 
             if temp.nombre:
 
-                for i in range(int(temp.n)):
-                    for j in range(int(temp.n)):'''
-
-                        
-
+                while aux is not None:
+                    print(temp.nombre)
+                   
+                    
+                     
+                    aux=aux.enlace
+            temp=temp.siguiente            
+    #----
             

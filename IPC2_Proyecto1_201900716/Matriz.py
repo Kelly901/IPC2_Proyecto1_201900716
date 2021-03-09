@@ -2,9 +2,11 @@ from NodoM import NodoM
 from Lista_simple import Lista
 from MatrizBinaria import ListaB
 from Lista2 import Lista2
+from graphviz import Digraph
+import xml.etree.ElementTree as ET 
 lis=Lista()
 class ListaM:
-
+    listaB=ListaB()
     def __init__(self):
         self.lista=None
         self.cabeza=None
@@ -40,7 +42,7 @@ class ListaM:
     def obtener(self):
 
         temp=self.cabeza
-        listaB=ListaB()
+        
         while temp is not None:
             aux=temp.matriz.cabeza
             if temp.nombre:
@@ -59,8 +61,47 @@ class ListaM:
                     aux=aux.enlace
                     #print(lista2.imprimir()) 
                     
-                listaB.insertar_final(temp.nombre,temp.n,temp.m,lista2)        
+                self.listaB.insertar_final(temp.nombre,temp.n,temp.m,lista2)        
                 #listaB.imprimir()
                 
             temp=temp.siguiente
-        listaB.imprimirMatriz()             
+        self.listaB.imprimirMatriz()
+        #self.listaB.suma() 
+
+#Prueba con graphiz
+
+
+            
+
+
+    def grafi(self,nombre):
+
+        temp=self.cabeza
+        cont=0
+        while temp is not None:
+            aux=temp.matriz.cabeza
+            if nombre==temp.nombre:
+
+                g=Digraph(format="png")
+                g.edge('Matrices',nombre)
+                g.edge(nombre,'n='+temp.n)
+                g.edge(nombre,'m='+temp.m)
+                for i in range(1,int(temp.n)*int(temp.m)):
+                    
+                    numero=aux.numero
+                    #print("x"+aux.x)
+                    numero2=""
+                    nombre2=""
+                    
+                    nombre2="."+numero
+                    g.edge(nombre,nombre2)
+                        
+                                
+                              
+                    cont=cont+1
+                    aux=aux.enlace
+                g.render(view=True)
+            temp=temp.siguiente
+
+
+ 

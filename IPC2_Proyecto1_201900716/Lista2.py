@@ -30,3 +30,11 @@ class Lista2:
             temp=temp.enlace
         print("->")
         
+    def getNodo(self,valor):
+        tmp=self.cabeza
+        
+        while tmp is not None:
+            if valor ==tmp.x:
+                return tmp.x," ",tmp.enlace.x
+            tmp=tmp.enlace
+        return None   

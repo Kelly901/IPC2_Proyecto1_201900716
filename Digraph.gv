@@ -1,0 +1,8 @@
+digraph {
+	Matrices -> MatrizPrueba1
+	MatrizPrueba1 -> "n=2"
+	MatrizPrueba1 -> "m=2"
+	MatrizPrueba1 -> .2
+	MatrizPrueba1 -> .0
+	MatrizPrueba1 -> .0
+}

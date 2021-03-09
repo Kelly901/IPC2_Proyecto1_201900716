@@ -3,7 +3,7 @@ from Lista_simple import Lista
 from Matriz import ListaM
 
 class Datos:
-   
+    lista= ListaM()
 
     def procesar(self,ruta1):
         #ruta=r'C:\Users\Kelly\Desktop\ProyectoIpc2\IPC2_Proyecto1_201900716\prueba.xml'
@@ -12,7 +12,7 @@ class Datos:
         root=tree.getroot()
         cont=0
         
-        lista= ListaM()
+        
         
         for element in root:
             
@@ -21,14 +21,16 @@ class Datos:
             for i in element:
                 listaAdentro.insertar_final(i.attrib['x'],i.attrib['y'],i.text)
                 #print(i.attrib['x']+" "+i.attrib['y']+" "+i.text)
-            lista.insertar_final(element.attrib['nombre'],element.attrib['n'],element.attrib['m'],listaAdentro)
+            self.lista.insertar_final(element.attrib['nombre'],element.attrib['n'],element.attrib['m'],listaAdentro)
                    
             cont=cont+1
         #lista.imprimir()   
 
         
         print("_________________")
-        lista.obtener()
+        self.lista.obtener()
+      
+        #lista.grafi(nombre)
         #
         
         '''for element in root:

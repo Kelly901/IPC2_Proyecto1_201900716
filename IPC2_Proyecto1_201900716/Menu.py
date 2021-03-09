@@ -6,6 +6,7 @@ from MatrizBinaria import ListaB
 lis=Lista()
 list2=Lista2()
 listaB=ListaB()
+listaM=ListaM()
 
 class Menu:
     ruta=""
@@ -42,19 +43,24 @@ class Menu:
             d=Datos()
             d.procesar(self.ruta)
             print(".......")
-            print("ejrwrjeio")
+           
             self.menu()
         elif opcion=="3":
             print("Escribir archivo de salida")
             print("____________________________")
+            
+            
             self.menu()
         elif opcion=="4":
             print("________________________________________")
             print("Mostrar datos del estudiante")
             print("Kelly Mischel Herrera Espino \n201900716 \nIntroducción a la Programación y Computación Sección \"D\" \nIngenieria en Ciencias y Sistemas \n4to Semestre")
-
+            self.menu()
         elif opcion=="5":
             print("Generar grafica")
+            nombre=input("Ingrese el nombre de la grafia-> ")
+            Datos.lista.grafi(nombre)
+            self.menu()
         elif opcion=="6":
             print("Salida")
         else:
